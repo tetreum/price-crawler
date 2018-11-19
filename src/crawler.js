@@ -9,7 +9,12 @@ let browser,
 
 const getPage = async () => {
     if (page === null) {
-        browser = await puppeteer.launch();
+        if ('TRAVIS' in process.env && 'CI' in process.env) {
+            browser = await puppeteer.launch({args: ['--no-sandbox']});
+        } else {
+            browser = await puppeteer.launch();
+        }
+        
         page = await browser.newPage();
         
         await page.setRequestInterception(true);
