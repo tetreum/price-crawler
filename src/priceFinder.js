@@ -6,8 +6,13 @@ const crawler = require('./crawler');
 
 const selectors = {
  '[itemprop="price"]' : async (page, $item) => {
+    let amount = await $item.attr('content');
+     
+    if (amount === null || amount.length < 1) {
+      amount = await $item.text();
+    }
     return {
-        "amount" : await $item.attr('content'),
+        "amount" : amount,
         "currency" : await page.q('[itemprop="priceCurrency"]').attr('content'),
     };
 },
