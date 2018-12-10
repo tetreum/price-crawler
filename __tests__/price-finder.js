@@ -30,7 +30,7 @@ describe('priceFinder', async () => {
           {
               url: "https://www.fnac.es/Portatil-Lenovo-Ideapad-520S-14IKB-Gris-Ordenador-portatil-PC-Portatil/a1436283",
               result: {
-                amount: 690,
+                amount: 706.37,
                 currency: "EUR",
               }
           },
