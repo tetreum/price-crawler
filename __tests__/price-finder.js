@@ -7,6 +7,13 @@ describe('priceFinder', async () => {
   it("Should return article's price", async () => {
       let tests = [
           {
+              url: "https://store.hp.com/us/en/pdp/hp-notebook-17-by0040nr",
+              result: {
+                amount: 519.99,
+                currency: "USD",
+              }
+          },
+          {
               url: "https://www.amazon.es/Teclast-F7-Port%C3%A1til-14pulgadas-Pantalla/dp/B07D71VKKT/ref=sr_1_1?ie=UTF8&qid=1542574739&sr=8-1&keywords=teclast+f5",
               result: {
                 amount: 319.99,
